@@ -9,4 +9,4 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: lof-dashboard-dev
     ports:
-      - "8010:8010"
+      - "5432:5432"
