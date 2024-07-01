@@ -1,0 +1,3 @@
+ALTER TABLE player ADD COLUMN team_id INT;
+
+ALTER TABLE player ADD CONSTRAINT team_id FOREIGN KEY (team_id) REFERENCES team (id)

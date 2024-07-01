@@ -1,9 +1,7 @@
 package fish.see.LoF_Dashboard_v2.Player;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import fish.see.LoF_Dashboard_v2.Team.Team;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,4 +18,8 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String summonerName;
+
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    Team team;
 }
