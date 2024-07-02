@@ -25,14 +25,14 @@ function App() {
     return (
         <>
             <BrowserRouter>
-                <Box width={navbarWidth} sx={{marginRight: 1, overflow: 'hidden'}}>
-                    <Header navbarWidth={60}/>
+                <Box width={navbarWidth} sx={{marginRight: 1}}>
+                    <Header navbarWidth={navbarWidth}/>
                 </Box>
                 <Box marginLeft={navbarWidth+'px'}>
                     <Routes>
                         <Route path="/" element={<Dashboard />} />
                         <Route path="/teams" element={<Teams />} />
-                        <Route path="/admin" element={<Admin />} />
+                        <Route path="/admin" element={<Admin teams={teams || []} players={players || []}/>} />
                         <Route path="*" element={<Error />} />
                     </Routes>
                 </Box>

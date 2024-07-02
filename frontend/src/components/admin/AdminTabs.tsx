@@ -5,9 +5,9 @@ export default function AdminTabs(props: AdminTabsProps) {
 
     const {currentTab, setCurrentTab} = props
 
-    function handleTabChange(e:any) {
+    function handleTabChange() {
+        //e:SyntheticEvent
         console.log("Tab Change")
-        console.log(e)
         if (currentTab == 1)
             setCurrentTab(0)
         else

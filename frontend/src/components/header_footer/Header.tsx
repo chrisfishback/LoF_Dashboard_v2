@@ -19,7 +19,7 @@ export default function Header({navbarWidth} : HeaderProps) {
                 [`& .MuiDrawer-paper`]: { width: navbarWidth, boxSizing: 'border-box' },
             }}
         >
-            <Box sx={{ overflow: 'auto' }}>
+            <Box sx={{ overflow: 'hidden' }}>
                 <List>
                     <ListItem key={1}>
                         <ListItemText primary={"LoF"} />
