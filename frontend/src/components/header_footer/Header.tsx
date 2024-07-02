@@ -3,6 +3,7 @@ import HomeIcon from '@mui/icons-material/HomeRounded';
 import SecurityRoundedIcon from '@mui/icons-material/SecurityRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
+import { Link } from "react-router-dom";
 
 type HeaderProps = {
     navbarWidth: number
@@ -22,10 +23,12 @@ export default function Header({navbarWidth} : HeaderProps) {
             <Box sx={{ overflow: 'hidden' }}>
                 <List>
                     <ListItem key={1}>
-                        <ListItemText primary={"LoF"} />
+                            <Link to={'/'} style={{textDecoration: 'none', color: 'inherit'}}>
+                                <ListItemText primary={"LoF"} />
+                            </Link>
                     </ListItem>
                     <ListItem key={2} disablePadding>
-                        <ListItemButton>
+                        <ListItemButton component={Link} to={'/'}>
                             <ListItemIcon>
                                 <HomeIcon/>
                             </ListItemIcon>
@@ -33,7 +36,7 @@ export default function Header({navbarWidth} : HeaderProps) {
                         </ListItemButton>
                     </ListItem>
                     <ListItem key={3} disablePadding>
-                        <ListItemButton>
+                        <ListItemButton component={Link} to={'/dashboard'}>
                             <ListItemIcon>
                                 <LeaderboardRoundedIcon/>
                             </ListItemIcon>
@@ -41,7 +44,7 @@ export default function Header({navbarWidth} : HeaderProps) {
                         </ListItemButton>
                     </ListItem>
                     <ListItem key={4} disablePadding>
-                        <ListItemButton>
+                        <ListItemButton component={Link} to={'/teams'}>
                             <ListItemIcon>
                                 <GroupsRoundedIcon/>
                             </ListItemIcon>
@@ -49,7 +52,7 @@ export default function Header({navbarWidth} : HeaderProps) {
                         </ListItemButton>
                     </ListItem>
                     <ListItem key={5} disablePadding>
-                        <ListItemButton>
+                        <ListItemButton component={Link} to={'/admin'}>
                             <ListItemIcon>
                                 <SecurityRoundedIcon/>
                             </ListItemIcon>
