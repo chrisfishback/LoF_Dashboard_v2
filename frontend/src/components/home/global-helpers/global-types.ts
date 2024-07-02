@@ -1,5 +1,5 @@
 export type PlayerType = {
-    id: number,
+    id?: number,
     summonerName: string
     tagline: string
     rank: string

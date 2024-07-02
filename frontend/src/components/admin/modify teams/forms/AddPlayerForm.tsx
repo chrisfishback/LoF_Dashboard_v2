@@ -1,6 +1,8 @@
 import {Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField} from "@mui/material";
-import {useState} from "react";
+import {SyntheticEvent, useState} from "react";
 import {AdminProps} from "../../scripts/AdminProps.ts";
+import {addPlayer} from "../../scripts/ModifyAPIs.ts";
+import {TeamType} from "../../../home/global-helpers/global-types.ts";
 
 export default function AddPlayerForm(props: AdminProps) {
 
@@ -10,20 +12,30 @@ export default function AddPlayerForm(props: AdminProps) {
     const [taglineInput, setTaglineInput] = useState("");
     const [teamInput, setTeamInput] = useState("");
 
-    function handlePlayerSubmit(e:any) {
+    async function handlePlayerSubmit(e: SyntheticEvent) {
         e.preventDefault();
 
-        console.log(e)
-        console.log(summonerNameInput)
-        console.log(taglineInput)
-        console.log(teamInput)
-        // addPlayer({
-        //         summonerName: summonerNameInput,
-        //         tagline: taglineInput,
-        //         team: teamInput,
-        //         rank: "",
-        //         level: ""
-        // })
+        let tempTeam: TeamType | undefined = teams.find(team => team.name == teamInput)
+
+        if (tempTeam) {
+            try {
+                let success = await addPlayer({
+                    summonerName: summonerNameInput,
+                    tagline: taglineInput,
+                    team: tempTeam,
+                    rank: "",
+                    level: ""
+                })
+
+                if (success) {
+                    console.log("Successfully Added Player")
+                }
+            } catch (error) {
+                console.error('Chris Error - Error adding player', error)
+            }
+        } else {
+            console.log('Error - Team Incorrect')
+        }
     }
 
     return (

@@ -16,12 +16,5 @@ public class PlayerService {
 
     public List<Player> getPlayers() { return playerRepository.findAll(); }
 
-    public boolean addPlayer(Player player) {
-        if (playerRepository.existsById(player.getId())) {
-            return false;
-        }
-
-        playerRepository.save(player);
-        return true;
-    }
+    public void addPlayer(Player player) {playerRepository.save(player);}
 }

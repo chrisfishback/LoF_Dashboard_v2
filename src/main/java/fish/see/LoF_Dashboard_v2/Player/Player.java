@@ -18,6 +18,9 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String summonerName;
+    private String tagline;
+    private String rank;
+    private String level;
 
     @ManyToOne
     @JoinColumn(name = "team_id")

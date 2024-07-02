@@ -1,9 +1,6 @@
 package fish.see.LoF_Dashboard_v2.Player;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @RestController
@@ -20,11 +17,8 @@ public class PlayerController {
     public List<Player> getPlayers() { return playerService.getPlayers(); }
 
     @PostMapping
-    public HttpStatus addPlayer(@RequestBody Player player) {
-        if (playerService.addPlayer(player)) {
-            return HttpStatus.ACCEPTED;
-        }
-        return HttpStatus.BAD_REQUEST;
+    public void addPlayer(@RequestBody Player player) {
+        playerService.addPlayer(player);
     }
 
 }
