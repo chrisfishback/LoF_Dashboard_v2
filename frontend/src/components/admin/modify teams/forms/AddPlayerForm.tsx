@@ -17,21 +17,13 @@ export default function AddPlayerForm(props: AdminProps) {
         console.log(summonerNameInput)
         console.log(taglineInput)
         console.log(teamInput)
-        // axios.post('/api/player', {
-        //     summonerName: summonerNameInput,
-        //     tagline: taglineInput,
-        //     team: teamInput,
-        //     rank: "",
-        //     level: ""
+        // addPlayer({
+        //         summonerName: summonerNameInput,
+        //         tagline: taglineInput,
+        //         team: teamInput,
+        //         rank: "",
+        //         level: ""
         // })
-        //     .then(function (response) {
-        //         console.log(response);
-        //
-        //         props.setPlayers(prevState => [...prevState, response.data]);
-        //     })
-        //     .catch(function (error) {
-        //         console.error(error);
-        //     });
     }
 
     return (
