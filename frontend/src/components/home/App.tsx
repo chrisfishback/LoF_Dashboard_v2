@@ -25,8 +25,8 @@ function App() {
     return (
         <>
             <BrowserRouter>
-                <Box width={navbarWidth} sx={{marginRight: 1}}>
-                    <Header />
+                <Box width={navbarWidth} sx={{marginRight: 1, overflow: 'hidden'}}>
+                    <Header navbarWidth={60}/>
                 </Box>
                 <Box marginLeft={navbarWidth+'px'}>
                     <Routes>

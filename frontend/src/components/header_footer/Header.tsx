@@ -4,16 +4,19 @@ import SecurityRoundedIcon from '@mui/icons-material/SecurityRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 
-export default function Header() {
-    const drawerWidth = 60
+type HeaderProps = {
+    navbarWidth: number
+}
+
+export default function Header({navbarWidth} : HeaderProps) {
 
     return (
         <Drawer
             variant="permanent"
             sx={{
-                width: drawerWidth,
+                width: navbarWidth,
                 flexShrink: 0,
-                [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+                [`& .MuiDrawer-paper`]: { width: navbarWidth, boxSizing: 'border-box' },
             }}
         >
             <Box sx={{ overflow: 'auto' }}>
@@ -26,7 +29,7 @@ export default function Header() {
                             <ListItemIcon>
                                 <HomeIcon/>
                             </ListItemIcon>
-                            <ListItemText primary={"Home"} />
+                            {/*<ListItemText primary={"Home"} />*/}
                         </ListItemButton>
                     </ListItem>
                     <ListItem key={3} disablePadding>
@@ -34,7 +37,7 @@ export default function Header() {
                             <ListItemIcon>
                                 <LeaderboardRoundedIcon/>
                             </ListItemIcon>
-                            <ListItemText primary={"Dashboard"} />
+                            {/*<ListItemText primary={"Dashboard"} />*/}
                         </ListItemButton>
                     </ListItem>
                     <ListItem key={4} disablePadding>
@@ -42,7 +45,7 @@ export default function Header() {
                             <ListItemIcon>
                                 <GroupsRoundedIcon/>
                             </ListItemIcon>
-                            <ListItemText primary={"Teams"} />
+                            {/*<ListItemText primary={"Teams"} />*/}
                         </ListItemButton>
                     </ListItem>
                     <ListItem key={5} disablePadding>
@@ -50,7 +53,7 @@ export default function Header() {
                             <ListItemIcon>
                                 <SecurityRoundedIcon/>
                             </ListItemIcon>
-                            <ListItemText primary={"Admin"} />
+                            {/*<ListItemText primary={"Admin"} />*/}
                         </ListItemButton>
                     </ListItem>
                 </List>
