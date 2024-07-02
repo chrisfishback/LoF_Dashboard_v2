@@ -1,4 +1,4 @@
-import {AdminProps} from "./AdminProps.ts";
+import {AdminProps} from "./scripts/AdminProps.ts";
 import {useEffect, useState} from "react";
 import AdminTabs from "./AdminTabs.tsx";
 import ModifyTeams from "./modify teams/ModifyTeams.tsx";

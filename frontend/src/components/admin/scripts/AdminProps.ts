@@ -1,4 +1,4 @@
-import {PlayerType, TeamType} from "../home/global-helpers/global-types.ts";
+import {PlayerType, TeamType} from "../../home/global-helpers/global-types.ts";
 import React from "react";
 
 export type AdminProps = {

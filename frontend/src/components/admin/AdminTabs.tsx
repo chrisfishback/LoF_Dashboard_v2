@@ -1,5 +1,5 @@
 import {Box, Tab, Tabs} from "@mui/material";
-import {AdminTabsProps} from "./AdminProps.ts";
+import {AdminTabsProps} from "./scripts/AdminProps.ts";
 
 export default function AdminTabs(props: AdminTabsProps) {
 
