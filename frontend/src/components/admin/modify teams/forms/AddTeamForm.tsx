@@ -1,8 +1,12 @@
 import {Button, Grid, TextField} from "@mui/material";
 import {SyntheticEvent, useState} from "react";
 import {addTeam} from "../../scripts/ModifyAPIs.ts";
+import {AdminProps} from "../../scripts/AdminProps.ts";
+import {getAllTeams} from "../../../home/global-helpers/globalAPIs.ts";
 
-export default function AddTeamForm() {
+export default function AddTeamForm(props: AdminProps) {
+
+    const {setTeams} = props
 
     const [newTeamName, setNewTeamName] = useState("");
 
@@ -13,6 +17,7 @@ export default function AddTeamForm() {
 
         if (success) {
             console.log("Added Team")
+            setTeams(await getAllTeams())
         }
     }
 

@@ -10,8 +10,8 @@ import Error from "../error/Error";
 import {Box} from "@mui/material";
 
 function App() {
-    const [players, setPlayers] = useState<PlayerType[] | null>(null);
-    const [teams, setTeams] = useState<TeamType[] | null>(null);
+    const [players, setPlayers] = useState<PlayerType[]>([]);
+    const [teams, setTeams] = useState<TeamType[]>([]);
 
     const navbarWidth = 60;
 
@@ -32,7 +32,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Dashboard />} />
                         <Route path="/teams" element={<Teams />} />
-                        <Route path="/admin" element={<Admin teams={teams || []} players={players || []}/>} />
+                        <Route path="/admin" element={<Admin setTeams={setTeams} setPlayers={setPlayers} teams={teams || []} players={players || []}/>} />
                         <Route path="*" element={<Error />} />
                     </Routes>
                 </Box>

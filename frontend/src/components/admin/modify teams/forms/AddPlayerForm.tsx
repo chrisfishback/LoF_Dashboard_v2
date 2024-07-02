@@ -3,10 +3,11 @@ import {SyntheticEvent, useState} from "react";
 import {AdminProps} from "../../scripts/AdminProps.ts";
 import {addPlayer} from "../../scripts/ModifyAPIs.ts";
 import {TeamType} from "../../../home/global-helpers/global-types.ts";
+import {getAllPlayers} from "../../../home/global-helpers/globalAPIs.ts";
 
 export default function AddPlayerForm(props: AdminProps) {
 
-    const {teams} = props
+    const {setPlayers, teams} = props
 
     const [summonerNameInput, setSummonerNameInput] = useState("");
     const [taglineInput, setTaglineInput] = useState("");
@@ -29,6 +30,7 @@ export default function AddPlayerForm(props: AdminProps) {
 
                 if (success) {
                     console.log("Successfully Added Player")
+                    setPlayers(await getAllPlayers())
                 }
             } catch (error) {
                 console.error('Chris Error - Error adding player', error)

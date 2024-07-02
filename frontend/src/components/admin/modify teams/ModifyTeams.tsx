@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import AddTeamForm from "./forms/AddTeamForm.tsx";
 
 export default function ModifyTeams(props : AdminProps) {
-    const {teams, players} = props
+    const {setTeams, setPlayers, teams, players} = props
 
     useEffect(() => {
         console.log("Modify Teams")
@@ -15,8 +15,8 @@ export default function ModifyTeams(props : AdminProps) {
     return (
         <>
             <h1>Modify Teams</h1>
-            <AddTeamForm />
-            <AddPlayerForm teams={teams} players={players}/>
+            <AddTeamForm setTeams={setTeams} setPlayers={setPlayers} teams={teams} players={players}/>
+            <AddPlayerForm setTeams={setTeams} setPlayers={setPlayers} teams={teams} players={players}/>
         </>
     );
 }

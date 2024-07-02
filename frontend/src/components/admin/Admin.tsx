@@ -15,7 +15,7 @@ function Admin(props: AdminProps) {
             <h1>Admin Page</h1>
             <AdminTabs currentTab={currentTab} setCurrentTab={setCurrentTab} />
 
-            { currentTab === MODIFYTEAMS ? <ModifyTeams teams={teams} players={players}/> : <ModifyWeekGames /> }
+            { currentTab === MODIFYTEAMS ? <ModifyTeams setTeams={setTeams} teams={teams} players={players}/> : <ModifyWeekGames /> }
         </>
     )
 }
