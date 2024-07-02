@@ -19,11 +19,8 @@ public class TeamController {
     public List<Team> getTeams() { return teamService.getTeams(); }
 
     @PostMapping
-    public HttpStatus addTeam(@RequestBody Team team) {
-        if (teamService.addTeam(team)) {
-            return HttpStatus.ACCEPTED;
-        }
-        return HttpStatus.BAD_REQUEST;
+    public void addTeam(@RequestBody Team team) {
+        teamService.addTeam(team);
     }
 
 }

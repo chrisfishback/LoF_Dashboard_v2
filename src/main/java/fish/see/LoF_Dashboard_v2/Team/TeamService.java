@@ -17,12 +17,6 @@ public class TeamService {
         return teamRepository.findAll();
     }
 
-    public boolean addTeam(Team team) {
-        if (teamRepository.existsById(team.getId())) {
-            return false;
-        }
-        teamRepository.save(team);
-        return true;
-    }
+    public void addTeam(Team team) { teamRepository.save(team); }
 
 }

@@ -8,6 +8,6 @@ export type PlayerType = {
 }
 
 export type TeamType = {
-    id: number,
+    id?: number,
     name: string,
 }
