@@ -25,7 +25,7 @@ export default function AddTeamForm(props: AdminProps) {
         <>
             <h4>Add Team</h4>
             <form onSubmit={handleTeamSubmit}>
-                <Grid container spacing={2} sx={{maxWidth: 600, margin: 'auto'}}>
+                <Grid container spacing={2} sx={{width: 600, margin: 'auto'}}>
                     <Grid item xs={12}>
                         <TextField required id="team-name" label="Team Name" variant="standard"
                                    sx={{width: '100%'}}

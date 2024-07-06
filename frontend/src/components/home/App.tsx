@@ -18,8 +18,6 @@ function App() {
     useEffect(() => {
         getAllPlayers().then(setPlayers);
         getAllTeams().then(setTeams);
-        console.log(players)
-        console.log(teams)
     }, []);
 
     return (
